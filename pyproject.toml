@@ -1,0 +1,51 @@
+# ============================================================================
+# pyproject.toml — Tooling configuration for CI (lint, tests, coverage, security)
+# The application source lives in src/python.
+# ============================================================================
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = [
+    "venv",
+    ".venv",
+    "src/python/venv",
+    "**/__pycache__",
+    "src/python/test_*.py",
+]
+
+[tool.ruff.lint]
+# E/W = pycodestyle, F = pyflakes, I = isort, B = bugbear, UP = pyupgrade
+select = ["E", "F", "W", "I", "B", "UP"]
+# E501 (line-too-long) is handled by the formatter.
+# UP042: `Phase(str, Enum)` is intentional for JSON/`.value` serialization.
+ignore = ["E501", "UP042"]
+
+[tool.ruff.lint.per-file-ignores]
+# Ad-hoc developer scripts are exploratory, not production code.
+"src/python/test_*.py" = ["E", "F", "B", "UP", "I", "W"]
+
+[tool.pytest.ini_options]
+# Real unit tests should live under a tests/ folder. The ad-hoc test_*.py
+# scripts in src/python require a live server + Copilot auth and are excluded.
+testpaths = ["tests", "src/python/tests"]
+asyncio_mode = "auto"
+addopts = "-ra --strict-markers"
+
+[tool.coverage.run]
+branch = true
+source = ["src/python"]
+omit = [
+    "*/venv/*",
+    "*/tests/*",
+    "src/python/test_*.py",
+]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+
+[tool.bandit]
+# Exclude vendored deps and throwaway developer scripts from SAST.
+exclude_dirs = ["venv", ".venv", "tests"]
+# B104 (bind all interfaces) is handled inline with a justified `# nosec`.

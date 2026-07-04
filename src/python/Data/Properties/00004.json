@@ -1,0 +1,30 @@
+{
+  "id": 4,
+  "type": "Townhouse",
+  "status": "For Sale",
+  "price": 675000,
+  "currency": "CAD",
+  "address": {
+    "street": "321 Oak Avenue",
+    "city": "Mississauga",
+    "province": "ON",
+    "postalCode": "L5B 3C1",
+    "country": "Canada"
+  },
+  "bedrooms": 3,
+  "bathrooms": 2,
+  "squareFootage": 1800,
+  "lotSizeSquareFootage": 2000,
+  "yearBuilt": 2016,
+  "parkingSpaces": 2,
+  "shortDescription": "Spacious townhouse near schools and parks",
+  "fullDescription": "Well-maintained 3-bedroom townhouse in family-friendly Mississauga neighborhood. Open concept living, updated kitchen, finished basement, and private backyard. Walking distance to schools, parks, and shopping.",
+  "keyFeatures": [
+    "Open concept main floor",
+    "Updated kitchen with island",
+    "Finished basement",
+    "Private fenced backyard",
+    "Near excellent schools"
+  ],
+  "listedDate": "2026-02-10"
+}

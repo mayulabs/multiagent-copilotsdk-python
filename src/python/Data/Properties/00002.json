@@ -1,0 +1,30 @@
+{
+  "id": 2,
+  "type": "Condo",
+  "status": "For Sale",
+  "price": 525000,
+  "currency": "CAD",
+  "address": {
+    "street": "456 King Street West, Unit 1204",
+    "city": "Toronto",
+    "province": "ON",
+    "postalCode": "M5V 1L7",
+    "country": "Canada"
+  },
+  "bedrooms": 2,
+  "bathrooms": 2,
+  "squareFootage": 950,
+  "lotSizeSquareFootage": null,
+  "yearBuilt": 2020,
+  "parkingSpaces": 1,
+  "shortDescription": "Modern downtown condo with stunning city views",
+  "fullDescription": "Luxurious 2-bedroom condo in the heart of downtown Toronto. Floor-to-ceiling windows provide breathtaking city views. Building amenities include fitness center, rooftop terrace, and 24/7 concierge.",
+  "keyFeatures": [
+    "Floor-to-ceiling windows",
+    "Panoramic city views",
+    "Stainless steel appliances",
+    "In-suite laundry",
+    "Building gym and rooftop terrace"
+  ],
+  "listedDate": "2026-02-01"
+}

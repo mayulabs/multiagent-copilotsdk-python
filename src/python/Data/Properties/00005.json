@@ -1,0 +1,30 @@
+{
+  "id": 5,
+  "type": "Condo",
+  "status": "For Sale",
+  "price": 385000,
+  "currency": "CAD",
+  "address": {
+    "street": "100 Harbour Street, Unit 605",
+    "city": "Toronto",
+    "province": "ON",
+    "postalCode": "M5J 2P3",
+    "country": "Canada"
+  },
+  "bedrooms": 1,
+  "bathrooms": 1,
+  "squareFootage": 650,
+  "lotSizeSquareFootage": null,
+  "yearBuilt": 2019,
+  "parkingSpaces": 1,
+  "shortDescription": "Modern 1-bedroom condo near waterfront",
+  "fullDescription": "Perfect starter home or investment property! This modern 1-bedroom condo features an open layout, modern finishes, and building amenities including gym and party room. Steps to waterfront, restaurants, and transit.",
+  "keyFeatures": [
+    "Open concept layout",
+    "Modern kitchen with quartz counters",
+    "Building amenities",
+    "Steps to waterfront",
+    "Excellent transit access"
+  ],
+  "listedDate": "2026-02-15"
+}

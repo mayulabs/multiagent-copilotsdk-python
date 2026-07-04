@@ -1,0 +1,28 @@
+# ============================================================================
+# Requirements.txt - Dependências Python do Projeto
+# ============================================================================
+# Instalar com: pip install -r requirements.txt
+# ============================================================================
+
+# Framework Web
+fastapi==0.115.0              # Framework web moderno (equivalente ao ASP.NET Core)
+uvicorn[standard]==0.32.0     # Servidor ASGI de alta performance
+websockets==14.1              # WebSocket support para real-time updates
+python-socketio==5.11.4       # Socket.IO server
+python-multipart==0.0.12      # Para upload de arquivos
+
+# ORM e Banco de Dados
+sqlalchemy==2.0.36            # ORM (equivalente ao Entity Framework Core)
+aiosqlite==0.20.0             # SQLite assíncrono
+
+# GitHub Copilot SDK (Python)
+# Instalar via: pip install github-copilot-sdk
+# Documentação: https://github.com/github/copilot-sdk
+github-copilot-sdk>=1.0.0     # GitHub Copilot SDK para Python
+
+# Templates e Frontend
+jinja2==3.1.4                 # Template engine para HTML
+markdown==3.7                 # Conversão de Markdown para HTML (equivalente ao Markdig)
+
+# Utilidades
+python-dotenv==1.0.1          # Carregar variáveis de ambiente de .env

@@ -1,0 +1,54 @@
+# ============================================================================
+# CodeQL — GitHub's static application security testing (SAST)
+# Scans Python code for security vulnerabilities and dangerous patterns.
+# Results appear in the repository's Security > Code scanning tab.
+# ============================================================================
+name: CodeQL
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+  schedule:
+    # Weekly deep scan (Mondays 06:00 UTC) to catch newly published CVE patterns.
+    - cron: "0 6 * * 1"
+
+concurrency:
+  group: codeql-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    name: Analyze (python)
+    runs-on: ubuntu-latest
+    permissions:
+      # Required for CodeQL to upload results to the Security tab.
+      security-events: write
+      contents: read
+      actions: read
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ["python"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          # security-and-quality adds maintainability rules on top of security.
+          queries: security-and-quality
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{ matrix.language }}"

@@ -1,0 +1,30 @@
+{
+  "id": 1,
+  "type": "House",
+  "status": "For Sale",
+  "price": 875000,
+  "currency": "CAD",
+  "address": {
+    "street": "123 Maple Street",
+    "city": "Toronto",
+    "province": "ON",
+    "postalCode": "M5H 2N2",
+    "country": "Canada"
+  },
+  "bedrooms": 4,
+  "bathrooms": 3,
+  "squareFootage": 2400,
+  "lotSizeSquareFootage": 5000,
+  "yearBuilt": 2015,
+  "parkingSpaces": 2,
+  "shortDescription": "Beautiful family home in quiet Toronto neighborhood",
+  "fullDescription": "This stunning 4-bedroom, 3-bathroom home offers modern living in a peaceful Toronto neighborhood. Features include a gourmet kitchen with stainless steel appliances, hardwood floors throughout, and a spacious backyard perfect for entertaining.",
+  "keyFeatures": [
+    "Gourmet kitchen with granite countertops",
+    "Hardwood floors throughout main level",
+    "Finished basement with rec room",
+    "Large backyard with deck",
+    "Close to schools and transit"
+  ],
+  "listedDate": "2026-01-15"
+}

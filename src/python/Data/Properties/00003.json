@@ -1,0 +1,30 @@
+{
+  "id": 3,
+  "type": "House",
+  "status": "For Sale",
+  "price": 1250000,
+  "currency": "CAD",
+  "address": {
+    "street": "789 Lakeshore Boulevard",
+    "city": "Toronto",
+    "province": "ON",
+    "postalCode": "M8V 1A1",
+    "country": "Canada"
+  },
+  "bedrooms": 5,
+  "bathrooms": 4,
+  "squareFootage": 3200,
+  "lotSizeSquareFootage": 6500,
+  "yearBuilt": 2018,
+  "parkingSpaces": 3,
+  "shortDescription": "Waterfront luxury home with private dock",
+  "fullDescription": "Spectacular waterfront property with 5 bedrooms and 4 bathrooms. This executive home features a chef's kitchen, wine cellar, home theater, and private dock. Enjoy stunning lake views from every room.",
+  "keyFeatures": [
+    "Waterfront location with private dock",
+    "Chef's kitchen with high-end appliances",
+    "Wine cellar and home theater",
+    "Master suite with lake views",
+    "Smart home technology throughout"
+  ],
+  "listedDate": "2026-01-20"
+}
