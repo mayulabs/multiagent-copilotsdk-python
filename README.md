@@ -4,18 +4,9 @@
 <img src="img/banner-build-26.png" alt="Microsoft Build 2026" width="1200"/>
 </p>
 
-# [Microsoft Build 2026](https://build.microsoft.com)
-
-## 🔥 BRK206: Your agent, anywhere: MultiClient, MultiDevice with GitHub Copilot SDK
-
-<img width='50%' alt="CopilotSDK" src="https://github.com/user-attachments/assets/0003609f-8ac5-43ed-bfea-4ab77498c57f" />
-
 ### Session Description
 
 Agents are powerful on your machine, but what happens when you need them everywhere else? In this session, we'll show how GitHub Copilot SDK lets you build an agent, embed it in an app, and take it with you across devices and into the cloud. You'll see how to go from a local agent to one you can access on your phone, move between machines, and run across multiple clients. If you've been working with agents locally and wondering what the next step looks like, this is it.
-
-### Session Slides
-*Will be added soon*
 
 ## �️ Demo Preview
 
@@ -91,33 +82,6 @@ By the end of this session, you will be able to:
 - Understand multi-client, multi-device agent deployment ​
 - Know what is new in the new GA 1.0 GitHub Copilot SDK
 
-### 💬 Keep Learning with Copilot
-
-Try these prompts with GitHub Copilot to explore the topics from this session. Open Copilot Chat in VS Code (`Ctrl+Alt+I` on Windows/Linux, `Cmd+Shift+I` on Mac), paste a prompt, and see what you learn.
-
-Use these as a starting point — or write your own!
-
-- *What can I make with the GitHub Copilot SDK*
-- *What's new in the generally available Copilot SDK since public preview?*
-- *What languages is the Copilot SDK available in?*
-- *How do I set up authentication?*
-- *How can I build a multi-agent system with Copilot SDK?*
-
-### 📚 Resources and Next Steps
-
-| Resource | Description |
-|:---------|:------------|
-| [GitHub Copilot SDK Repo](https://github.com/github/copilot-sdk?utm_source=build-brk206-related-copilot-sdk-repo-cta&utm_medium=event&utm_campaign=msbuild-2026) | Access all Copilot SDK in all 6 languages |
-| [GitHub Copilot SDK Cookbooks](https://github.com/github/awesome-copilot?utm_source=build-brk206-related-awesome-copilot-cookbooks-cta&utm_medium=event&utm_campaign=msbuild-2026) | Custom agents, instructions, skills, hooks, workflows, and plugins|
-| [GitHub Copilot SDK Getting Started Guide](https://github.com/github/copilot-sdk/blob/main/docs/getting-started.md?utm_source=build-brk206-related-sdk-getting-started-cta&utm_medium=event&utm_campaign=msbuild-2026) | Build your first Copilot-powered app|
-
-### Related Labs
-
-| Lab | Title | Repo |
-|-----|-------|------|
-| LAB500 | Terminal to Party: Live-Coding with GitHub Copilot CLI and Hydra | https://github.com/microsoft/Build26-LAB500-terminal-to-party-live-coding-with-github-copilot-cli-and-hydra |
-| LAB502 | Make GitHub Copilot Work Your Way: Custom Tools, Context and Workflows | https://github.com/microsoft/Build26-LAB502-make-github-copilot-work-your-way-custom-tools-context-and-workflows |
-
 
 ### 🌟 Additional Resources
 
@@ -153,22 +117,12 @@ Want to take this multi-agent pattern into a new project? The core is decoupled 
 
 ## Content Owners
 
-<!-- TODO: Add yourself as a content owner
-1. Change the src in the image tag to {your github url}.png
-2. Change INSERT NAME HERE to your name
-3. Change the github url in the final href to your url. -->
-
 <table>
 <tr>
-    <td align="center"><a href="http://github.com/patniko">
-        <img src="https://github.com/patniko.png" width="100px;" alt="Patrick Nikoletich"/><br />
-        <sub><b>Patrick Nikoletich</b></sub></a><br />
-            <a href="https://github.com/patniko" title="Distinguished Product Manager">📢</a>
-    </td>
-     <td align="center"><a href="http://github.com/stevesandersonms">
-        <img src="https://github.com/stevesandersonms.png" width="100px;" alt="Steve Sanderson"/><br />
-        <sub><b>Steve Sanderson</b></sub></a><br />
-            <a href="https://github.com/patniko" title="Principal Software Engineer">📢</a>
+    <td align="center"><a href="http://github.com/mayulabs">
+        <img src="https://github.com/mayulabs.png" width="100px;" alt="Mayumi Shingaki"/><br />
+        <sub><b>Mayumi Shingaki</b></sub></a><br />
+            <a href="https://github.com/mayulabs" title="Senior Software Engineer">📢</a>
     </td>
 </tr></table>
 

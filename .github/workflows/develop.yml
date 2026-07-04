@@ -1,21 +1,28 @@
 # ============================================================================
-# CI — Security, Lint, Tests and SonarCloud
-# Runs on every branch push and on PRs targeting develop and main.
+# Develop Pipeline
+# ----------------------------------------------------------------------------
+# Runs everything related to getting code INTO develop:
+#   - On a feature-branch push  -> run the pipeline AND open/reuse a PR to develop
+#   - On a pull_request -> develop -> run the pipeline
+#
 # Gitflow: feature branch -> develop -> main
+# The whole pipeline (lint, security, tests, CodeQL) lives here so this file is
+# the single place that governs quality gates for the develop stage.
 # ============================================================================
-name: CI
+name: Develop Pipeline
 
 on:
   push:
-    branches:
-      - "**"
+    # Feature branches push here. develop/main have their own flow (main.yml).
+    branches-ignore:
+      - develop
+      - main
   pull_request:
     branches:
       - develop
-      - main
 
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
+  group: develop-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -76,7 +83,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
 
   # --------------------------------------------------------------------------
-  # Tests — pytest with coverage (produces coverage.xml for Sonar)
+  # Tests — pytest with coverage, gated at 90%
   # --------------------------------------------------------------------------
   test:
     name: Tests (pytest)
@@ -115,3 +122,72 @@ jobs:
           name: coverage-xml
           path: coverage.xml
           if-no-files-found: ignore
+
+  # --------------------------------------------------------------------------
+  # CodeQL — GitHub's SAST. Results appear under Security > Code scanning.
+  # --------------------------------------------------------------------------
+  codeql:
+    name: CodeQL (python)
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      contents: read
+      actions: read
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ["python"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          queries: security-and-quality
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{ matrix.language }}"
+
+  # --------------------------------------------------------------------------
+  # Auto PR — feature branch -> develop (only after the pipeline passes)
+  # Runs only on a feature-branch push, never on pull_request events.
+  # --------------------------------------------------------------------------
+  auto-pr:
+    name: Open PR into develop
+    needs: [lint, security, test]
+    if: ${{ github.event_name == 'push' && github.ref_type == 'branch' && !github.event.deleted }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create or reuse PR into develop
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          # Ensure the develop branch exists before targeting it
+          if ! git ls-remote --exit-code --heads origin develop >/dev/null 2>&1; then
+            echo "::warning::'develop' branch does not exist yet — skipping auto PR."
+            exit 0
+          fi
+
+          existing=$(gh pr list --head "$BRANCH" --base develop --state open \
+            --json number --jq '.[0].number' 2>/dev/null || echo "")
+
+          if [ -n "$existing" ]; then
+            echo "PR already open for $BRANCH -> develop: #$existing"
+            exit 0
+          fi
+
+          gh pr create \
+            --base develop \
+            --head "$BRANCH" \
+            --title "Merge \`$BRANCH\` into develop" \
+            --body "Automated PR opened from a push to \`$BRANCH\`. Gitflow: \`$BRANCH\` → develop → main."
