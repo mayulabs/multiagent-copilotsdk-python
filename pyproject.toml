@@ -25,10 +25,10 @@ ignore = ["E501", "UP042"]
 # Ad-hoc developer scripts are exploratory, not production code.
 "src/python/test_*.py" = ["E", "F", "B", "UP", "I", "W"]
 
+# Real unit tests should live under src/python/tests/. The ad-hoc test_*.py
+# scripts in src/python require a live server + Copilot auth and are excluded
+# from collection via collect_ignore_glob in the root conftest.py.
 [tool.pytest.ini_options]
-# Real unit tests should live under a tests/ folder. The ad-hoc test_*.py
-# scripts in src/python require a live server + Copilot auth and are excluded.
-testpaths = ["tests", "src/python/tests"]
 asyncio_mode = "auto"
 addopts = "-ra --strict-markers"
 
@@ -39,6 +39,10 @@ omit = [
     "*/venv/*",
     "*/tests/*",
     "src/python/test_*.py",
+    # app.py is the ASGI/server entrypoint (FastAPI routes, WebSocket loop,
+    # uvicorn bootstrap). It is an I/O boundary exercised by the integration
+    # scripts, not by unit tests, so it is excluded from unit coverage.
+    "src/python/app.py",
 ]
 
 [tool.coverage.report]

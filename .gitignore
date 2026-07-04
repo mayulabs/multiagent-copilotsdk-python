@@ -39,3 +39,9 @@ ENV/
 
 # Logs
 *.log
+
+# Test & coverage artifacts
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/

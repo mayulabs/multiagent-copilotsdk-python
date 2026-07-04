@@ -89,17 +89,21 @@ jobs:
           python-version: "3.12"
 
       - name: Install test tooling
-        run: pip install pytest pytest-cov pytest-asyncio
+        run: |
+          pip install pytest pytest-cov pytest-asyncio
+          # Runtime libs needed to import the modules under test. The Copilot
+          # SDK itself is faked in tests/conftest.py (no auth/network in CI).
+          pip install pydantic sqlalchemy aiosqlite
 
       - name: Run tests with coverage
         run: |
           set +e
-          pytest --cov --cov-report=xml --cov-report=term
+          pytest --cov --cov-report=xml --cov-report=term --cov-fail-under=90
           code=$?
           # Exit code 5 = "no tests collected". Treat as success until real
-          # unit tests are added under a tests/ directory.
+          # unit tests are added under src/python/tests/.
           if [ "$code" -eq 5 ]; then
-            echo "::notice::No tests collected yet. Add unit tests under tests/."
+            echo "::notice::No tests collected yet. Add unit tests under src/python/tests/."
             exit 0
           fi
           exit $code
