@@ -5,7 +5,6 @@
 ### 1. Verificação do Ambiente
 ```bash
 ✓ python --version          # Python 3.12.1
-✓ dotnet --version          # .NET 10.0.301  
 ✓ gh auth status           # Autenticado como mayulabs
 ```
 
@@ -127,27 +126,26 @@ session.on(handle_event)
 
 ### 📝 Próximos Passos
 1. ✅ Testar criação de agente individual
-2. ⏳ Integrar banco de dados SQLite com dados do projeto .NET
+2. ⏳ Integrar banco de dados SQLite com dados das propriedades
 3. ⏳ Implementar servidor FastAPI completo
 4. ⏳ Testar WebSocket e UI em tempo real
 
 ## 🎉 Conquistas
 
-✅ **Conversão bem-sucedida de .NET para Python!**
-- Todos os arquivos principais convertidos
+✅ **Implementação Python bem-sucedida!**
+- Todos os arquivos principais implementados
 - API do Copilot SDK dominada
 - SDK testado e funcionando
-- Arquitetura equivalente ao projeto original
 
-## 🔗 Comparação .NET vs Python
+## 🔗 Stack Tecnológica
 
-| Componente | C# (.NET) | Python | Status |
-|------------|-----------|--------|--------|
-| Framework Web | ASP.NET Core | FastAPI | ✅ Convertido |
-| UI Framework | Blazor Server | WebSocket + JS | ✅ Convertido |
-| ORM | Entity Framework | SQLAlchemy | ✅ Convertido |
-| Real-time | SignalR | WebSocket | ✅ Convertido |
-| Copilot SDK | ✅ Funcionando | ✅ Funcionando | ✅ Ambos OK |
+| Componente | Tecnologia | Status |
+|------------|-----------|--------|
+| Framework Web | FastAPI | ✅ |
+| UI Framework | WebSocket + JS | ✅ |
+| ORM | SQLAlchemy | ✅ |
+| Real-time | WebSocket | ✅ |
+| Copilot SDK | Python SDK | ✅ Funcionando |
 
 ## 📚 Recursos Utilizados
 

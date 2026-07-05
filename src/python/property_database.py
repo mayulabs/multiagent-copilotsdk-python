@@ -3,8 +3,7 @@
 # ============================================================================
 # Gerencia o banco de dados SQLite com 100 propriedades fictícias.
 # Fornece ferramenta de busca que a IA pode chamar durante processamento.
-# Usa SQLAlchemy (ORM equivalente ao Entity Framework Core).
-# Conversão de PropertyDatabase.cs para Python
+# Usa SQLAlchemy como ORM assíncrono.
 # ============================================================================
 
 import json
@@ -29,7 +28,6 @@ class Property(Base):
     """
     Modelo de uma propriedade imobiliária.
     Mapeado para tabela 'properties' no SQLite.
-    Equivalente à classe Property em C#.
     """
 
     __tablename__ = "properties"
@@ -40,7 +38,7 @@ class Property(Base):
     price: Mapped[int] = mapped_column(Integer)  # Preço em centavos
     currency: Mapped[str] = mapped_column(String)  # Ex: "CAD", "USD"
 
-    # Endereço (armazenado como JSON, similar ao owned entity do C#)
+    # Endereço (armazenado como JSON)
     address_street: Mapped[str] = mapped_column(String)
     address_city: Mapped[str] = mapped_column(String)
     address_province: Mapped[str] = mapped_column(String)
@@ -96,7 +94,6 @@ class PropertyDatabase:
     """
     Serviço principal do banco de dados.
     Fornece ferramenta de busca que a IA pode chamar.
-    Equivalente à classe PropertyDatabase em C#.
     """
 
     def __init__(self, db_path: str = "properties.db"):

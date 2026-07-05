@@ -3,7 +3,6 @@
 # ============================================================================
 # Este é o arquivo principal que inicializa a aplicação web FastAPI.
 # Configura serviços, banco de dados, WebSockets e inicia o servidor.
-# Equivalente ao Program.cs do ASP.NET Core.
 # ============================================================================
 
 import asyncio
@@ -139,7 +138,6 @@ async def websocket_endpoint(websocket: WebSocket):
     """
     WebSocket para comunicação em tempo real com o frontend.
     Envia atualizações do estado sempre que um agente muda de fase.
-    Equivalente ao SignalR/Blazor Server do ASP.NET Core.
     """
     print("[WS] Accepting WebSocket connection...", flush=True)
     await websocket.accept()

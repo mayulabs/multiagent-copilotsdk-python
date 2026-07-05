@@ -4,7 +4,6 @@
 # Este é o CORAÇÃO do sistema: um agente único que usa a IA do GitHub Copilot
 # para processar consultas de clientes através de múltiplas fases.
 # A IA decide autonomamente quando avançar entre as fases.
-# Conversão de Agent.cs para Python
 # ============================================================================
 
 from collections.abc import Callable

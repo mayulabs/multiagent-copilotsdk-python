@@ -193,20 +193,20 @@ taskkill /PID <PID> /F
 ### Warning: "Data directory not found"
 **Solução:** O código usa path absoluto automaticamente. Se aparecer, verifique:
 ```powershell
-ls ../AgentOrchestrator/Data/Properties/*.json
+ls Data/Properties/*.json
 ```
 
-## 🎓 Comparação .NET vs Python
+## 🎓 Stack Tecnológica
 
-| Recurso | .NET (Original) | Python (Convertido) | Status |
-|---------|----------------|---------------------|--------|
-| Framework Web | ASP.NET Core | FastAPI | ✅ |
-| UI Framework | Blazor Server | WebSocket + HTML/JS | ✅ |
-| ORM | Entity Framework | SQLAlchemy | ✅ |
-| Real-time | SignalR | WebSocket nativo | ✅ |
-| Copilot SDK | ✅ C# SDK | ✅ Python SDK | ✅ |
-| Database | SQLite | SQLite | ✅ |
-| Async/Await | ✅ async/await | ✅ async/await | ✅ |
+| Recurso | Tecnologia | Status |
+|---------|-----------|--------|
+| Framework Web | FastAPI | ✅ |
+| UI Framework | WebSocket + HTML/JS | ✅ |
+| ORM | SQLAlchemy | ✅ |
+| Real-time | WebSocket nativo | ✅ |
+| Copilot SDK | Python SDK | ✅ |
+| Database | SQLite | ✅ |
+| Async/Await | async/await | ✅ |
 
 ## 📚 Recursos
 
@@ -228,7 +228,7 @@ ls ../AgentOrchestrator/Data/Properties/*.json
 
 ## 🎉 Sucesso!
 
-O projeto foi **100% convertido de .NET para Python** mantendo toda a funcionalidade original!
+O projeto está **100% funcional** com todos os recursos operacionais!
 
 **Última execução bem-sucedida:**
 ```
@@ -241,5 +241,5 @@ Status: ✅ Funcionando perfeitamente!
 ---
 
 **Criado em:** 2025  
-**Conversão:** .NET 10.0 → Python 3.12  
+**Runtime:** Python 3.12  
 **Demo:** Microsoft Build 2026 - Session BRK206

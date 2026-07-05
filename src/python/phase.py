@@ -3,7 +3,6 @@
 # ============================================================================
 # Define os estados (fases) pelos quais um agente passa durante processamento.
 # Também define a configuração visual do pipeline para a UI.
-# Equivalente ao Phase.cs do projeto original.
 # ============================================================================
 
 from dataclasses import dataclass

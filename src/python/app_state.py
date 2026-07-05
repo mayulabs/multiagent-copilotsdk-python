@@ -4,7 +4,6 @@
 # Este arquivo gerencia o estado compartilhado da aplicação e orquestra
 # a criação e execução de múltiplos agentes simultaneamente.
 # É um Singleton - existe apenas uma instância na aplicação.
-# Conversão de AppState.cs para Python
 # ============================================================================
 
 import asyncio
